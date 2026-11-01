@@ -5,7 +5,10 @@ import pandas as pd
 import tensorflow as tf
 
 
-DATA_DIR = "/Users/pujasharma/Desktop/archive/BraTS2020_training_data/content/data"
+DATA_DIR = os.environ.get(
+    "NEUROSCAN_DATA_DIR",
+    "data/BraTS2020_training_data/content/data"
+)
 
 
 def get_slice_files(volumes):
